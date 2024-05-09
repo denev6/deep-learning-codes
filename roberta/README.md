@@ -1,0 +1,3 @@
+- Data: [월간 데이콘 발화자의 감정인식](https://dacon.io/competitions/official/236027/data)
+- Model: [Hugging Face](https://huggingface.co/models)
+- LeaderBoard: Public-4th, Awards-2nd
