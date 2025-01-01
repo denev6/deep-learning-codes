@@ -1,0 +1,19 @@
+# Visual Studio files
+.vs/
+*.user
+*.vcxproj.*
+!*.vcxproj
+
+# Build outputs
+Debug/
+Release/
+OpencvCpp/
+x64/
+*.obj
+*.exe
+*.pdb
+
+# Image
+src/lenna.bmp
+src/man1.jpg
+src/man2.jpg
