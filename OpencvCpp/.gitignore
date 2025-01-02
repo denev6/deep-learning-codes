@@ -14,6 +14,7 @@ x64/
 *.pdb
 
 # Image
-src/lenna.bmp
-src/man1.jpg
-src/man2.jpg
+assets/lenna.bmp
+assets/man1.jpg
+assets/man2.jpg
+assets/man3.jpg

@@ -1,10 +1,11 @@
 #include "opencv2/opencv.hpp"
 #include <iostream>
+#include "basic.hpp"
 
 using namespace std;
 using namespace cv;
 
-const string IMG_PATH = "C:\\Users\\admin\\Desktop\\deep-learning-codes\\OpencvCpp\\src\\";
+const string IMG_PATH = "C:\\Users\\admin\\Desktop\\deep-learning-codes\\OpencvCpp\\assets\\";
 const Mat LENNA = imread(IMG_PATH + "lenna.bmp", IMREAD_GRAYSCALE);
 
 // Reference: https://github.com/gilbutITbook/006939/blob/master/ch05/histogram/main.cpp

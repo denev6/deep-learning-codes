@@ -1,10 +1,11 @@
 #include "opencv2/opencv.hpp"
 #include <iostream>
+#include "basic.hpp"
 
 using namespace std;
 using namespace cv;
 
-const string IMG_PATH = "C:\\Users\\admin\\Desktop\\deep-learning-codes\\OpencvCpp\\src\\";
+const string IMG_PATH = "C:\\Users\\admin\\Desktop\\deep-learning-codes\\OpencvCpp\\assets\\";
 
 void camera_in() {
 	VideoCapture cap(0);

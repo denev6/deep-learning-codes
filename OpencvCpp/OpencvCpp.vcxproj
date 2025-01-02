@@ -18,6 +18,21 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\basic\computation.cpp" />
+    <ClCompile Include="src\basic\filter.cpp" />
+    <ClCompile Include="src\basic\hist.cpp" />
+    <ClCompile Include="src\basic\video.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\transform.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\basic.hpp" />
+    <ClInclude Include="include\transform.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitignore" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -104,7 +119,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(OPENCV_DIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(OPENCV_DIR)\include;$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -129,17 +144,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="convert.cpp" />
-    <ClCompile Include="filter.cpp" />
-    <ClCompile Include="hist.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="features.cpp" />
-    <ClCompile Include="video.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="basic.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
