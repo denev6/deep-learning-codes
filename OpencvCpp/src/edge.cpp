@@ -7,8 +7,9 @@ using namespace cv;
 
 const string IMG_PATH = "C:\\Users\\admin\\Desktop\\deep-learning-codes\\OpencvCpp\\assets\\";
 
+
 void sobel() {
-	Mat img = imread(IMG_PATH + "object4.jpg", IMREAD_GRAYSCALE);
+	Mat img = imread(IMG_PATH + "object2.png", IMREAD_GRAYSCALE);
 	if (img.empty()) return;
 
 	Mat dx, dy;
@@ -19,7 +20,7 @@ void sobel() {
 	magnitude(dx, dy, mag_float);
 	mag_float.convertTo(mag, CV_8UC1);
 
-	int threshold = 100;
+	int threshold = 150;
 	Mat edge = mag > threshold;
 
 	imshow("img", img);
@@ -27,24 +28,25 @@ void sobel() {
 }
 
 void canny() {
-	Mat img = imread(IMG_PATH + "object4.jpg", IMREAD_GRAYSCALE);
+	Mat img = imread(IMG_PATH + "object2.png", IMREAD_GRAYSCALE);
 	if (img.empty()) return;
 
 	Mat dst;
-	Canny(img, dst, 100, 150);
+	Canny(img, dst, 100, 200);
 
 	imshow("img", img);
 	imshow("dst", dst);
 }
+
 void hough() {
-	Mat img = imread(IMG_PATH + "object.jpg", IMREAD_GRAYSCALE);
+	Mat img = imread(IMG_PATH + "object1.png", IMREAD_GRAYSCALE);
 	if (img.empty()) return;
 
 	Mat edge;
-	Canny(img, edge, 50, 100);
+	Canny(img, edge, 50, 150);
 
 	vector<Vec2f> lines;
-	int threshold = 150;
+	int threshold = 100;
 	HoughLines(edge, lines, 1, CV_PI / 180, threshold);
 
 	// draw detected lines in red
@@ -67,15 +69,15 @@ void hough() {
  }
 
 void hough_segment() {
-	Mat img = imread(IMG_PATH + "object.jpg", IMREAD_GRAYSCALE);
+	Mat img = imread(IMG_PATH + "object1.png", IMREAD_GRAYSCALE);
 	if (img.empty()) return;
 
 	Mat edge;
 	Canny(img, edge, 50, 100);
 
 	vector<Vec4i> lines;
-	int threshold = 150;
-	HoughLinesP(edge, lines, 1, CV_PI / 180, threshold, 0, 15);
+	int threshold = 30;
+	HoughLinesP(edge, lines, 1, CV_PI / 180, threshold);
 
 	Mat dst;
 	cvtColor(edge, dst, COLOR_GRAY2BGR);

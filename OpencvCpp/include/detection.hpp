@@ -1,5 +1,6 @@
 #pragma once
 
+//edge
 void sobel();
 void canny();
 void hough();

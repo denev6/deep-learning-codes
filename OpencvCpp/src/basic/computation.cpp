@@ -8,21 +8,6 @@ using namespace cv;
 const string IMG_PATH = "C:\\Users\\admin\\Desktop\\deep-learning-codes\\OpencvCpp\\assets\\";
 
 
-void bgr2gray() {
-	Mat src = imread(IMG_PATH + "lenna.bmp");
-	Mat dst;
-	cvtColor(src, dst, COLOR_BGR2GRAY);
-
-	// or simply:
-	// imread(PATH, IMREAD_GRAYSCALE);
-
-	imshow("orginal", src);
-	imshow("converted", dst);
-
-	waitKey();
-	destroyAllWindows();
-}
-
 void brightness_gray() {
 	Mat src = imread(IMG_PATH + "img.jpg", IMREAD_GRAYSCALE);
 	if (src.empty()) return;
@@ -65,31 +50,6 @@ void brightness_manual() {
 			// saturate_cast<uchar>(v)
 		}
 	}
-
-	imshow("original", src);
-	imshow("brighter", dst);
-
-	waitKey();
-	destroyAllWindows();
-}
-
-void brightness_hsv() {
-	Mat src = imread(IMG_PATH + "img.jpg", IMREAD_COLOR);
-	if (src.empty()) return;
-
-	Mat hsv_image;
-	cvtColor(src, hsv_image, cv::COLOR_BGR2HSV);
-
-	vector<Mat> hsv_channels;
-	split(hsv_image, hsv_channels);
-
-	int brightness_value = 100;
-	hsv_channels[2] = min(hsv_channels[2] + brightness_value, 255);
-
-	merge(hsv_channels, hsv_image);
-
-	Mat dst;
-	cvtColor(hsv_image, dst, cv::COLOR_HSV2BGR);
 
 	imshow("original", src);
 	imshow("brighter", dst);

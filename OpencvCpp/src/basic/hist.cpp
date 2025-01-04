@@ -8,7 +8,6 @@ using namespace cv;
 const string IMG_PATH = "C:\\Users\\admin\\Desktop\\deep-learning-codes\\OpencvCpp\\assets\\";
 const Mat LENNA = imread(IMG_PATH + "lenna.bmp", IMREAD_GRAYSCALE);
 
-// Reference: https://github.com/gilbutITbook/006939/blob/master/ch05/histogram/main.cpp
 
 Mat calcGrayHist(const Mat& img) {
 	CV_Assert(img.type() == CV_8UC1);
@@ -81,4 +80,23 @@ void compareContrastHist() {
 
 	imshow("high hist", hist_high);
 	imshow("low hist", hist_low);
+}
+
+void equalizeColorHist() {
+	Mat img = imread(IMG_PATH + "img3.jpg", IMREAD_COLOR);
+	if (img.empty()) return;
+	imshow("img", img);
+
+	cvtColor(img, img, COLOR_BGR2YCrCb);
+
+	vector<Mat> yCrCb_planes;
+	split(img, yCrCb_planes);
+
+	equalizeHist(yCrCb_planes[0], yCrCb_planes[0]);
+
+	Mat dst;
+	merge(yCrCb_planes, dst);
+	cvtColor(dst, dst, COLOR_YCrCb2BGR);
+
+	imshow("dst", dst);
 }
