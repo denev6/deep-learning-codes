@@ -8,7 +8,7 @@ using namespace std;
 using namespace cv;
 
 int main() {
-	hough_circles2();
+	canny_manual();
 
 	waitKey();
 	destroyAllWindows();
