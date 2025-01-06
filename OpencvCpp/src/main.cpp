@@ -8,7 +8,7 @@ using namespace std;
 using namespace cv;
 
 int main() {
-	canny_manual();
+	bbox_with_label();
 
 	waitKey();
 	destroyAllWindows();

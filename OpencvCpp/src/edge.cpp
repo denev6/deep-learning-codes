@@ -20,7 +20,7 @@ void sobel() {
 	magnitude(dx, dy, mag_float);
 	mag_float.convertTo(mag, CV_8UC1);
 
-	int threshold = 0;
+	int threshold = 150;
 	Mat edge = mag > threshold;
 
 	imshow("img", img);
@@ -257,4 +257,112 @@ void hough_circles2() {
 	}
 
 	imshow("dst", dst);
+}
+
+void bbox() {
+	Mat img = imread(IMG_PATH + "shapes.png", IMREAD_GRAYSCALE);
+	if (img.empty()) return;
+
+	Mat bin;
+	threshold(img, bin, 0, 255, THRESH_BINARY | THRESH_OTSU);
+	imshow("bin", bin);
+
+	Mat labels, stats, centroids;
+	int cnt = connectedComponentsWithStats(bin, labels, stats, centroids);
+
+	Mat dst;
+	cvtColor(img, dst, COLOR_GRAY2BGR);
+
+	for (int i = 1; i < cnt; i++) {
+		int* p = stats.ptr<int>(i);
+		if (p[4] < 20) continue;
+		rectangle(dst, Rect(p[0], p[1], p[2], p[3]), Scalar(0, 255, 255), 2);
+	}
+	imshow("bbox", dst);
+}
+
+void contours() {
+	Mat img = imread(IMG_PATH + "shapes.png", IMREAD_GRAYSCALE);
+	if (img.empty()) return;
+
+	vector<vector<Point>> contours;
+	findContours(img, contours, RETR_LIST, CHAIN_APPROX_NONE);
+
+	Mat dst;
+	cvtColor(img, dst, COLOR_GRAY2BGR);
+
+	for (int i = 0; i < contours.size(); i++) {
+		Scalar c(rand() & 255, rand() & 255, rand() & 255);
+		drawContours(dst, contours, i, c, 2);
+	}
+	imshow("dst", dst);
+}
+
+void contours_hierarchy() {
+	Mat img = imread(IMG_PATH + "shapes.png", IMREAD_GRAYSCALE);
+	if (img.empty()) return;
+
+	vector<vector<Point>> contours;
+	vector<Vec4i> hierarchy;
+	findContours(img, contours, hierarchy, RETR_CCOMP, CHAIN_APPROX_SIMPLE);
+
+	Mat dst;
+	cvtColor(img, dst, COLOR_GRAY2BGR);
+
+	for (int i = 0; i  >= 0; i = hierarchy[i][0]) {
+		Scalar c(rand() & 255, rand() & 255, rand() & 255);
+		drawContours(dst, contours, i, c, -1, LINE_8, hierarchy);
+	}
+	imshow("dst", dst);
+}
+
+void bbox_with_label() {
+	Mat img = imread(IMG_PATH + "shapes.png", IMREAD_COLOR);
+	if (img.empty()) return;
+
+	Mat img_gray;
+	cvtColor(img, img_gray, COLOR_BGR2GRAY);
+
+	Mat bin;
+	threshold(img_gray, bin, 200, 255, THRESH_BINARY | THRESH_OTSU);
+
+	vector<vector<Point>> contours;
+	findContours(bin, contours, RETR_EXTERNAL, CHAIN_APPROX_NONE);
+
+	string label;
+
+	for (vector<Point>& pts : contours) {
+		// skip if the area is smaller than...
+		if (contourArea(pts) < 100) continue;
+
+		// approximate Curve using Donglas-Peucker
+		vector<Point> approx;
+		approxPolyDP(pts, approx, arcLength(pts, true) * 0.02, true);
+
+		int vtc = (int)approx.size();
+
+		if (vtc == 3) {
+			label = "TRI";
+		}
+		else if (vtc == 4) {
+			label = "RECT";
+		}
+		else if (vtc > 4) {
+			double len = arcLength(pts, true);
+			double area = contourArea(pts);
+			double ratio = 4. * CV_PI * area / (len * len);
+
+			if (ratio > 0.8) {
+				label = "CIRCLE";
+			}
+			else {
+				label = "UNKNOWN";
+			}
+		}
+		// draw bbox and label
+		Rect rc = boundingRect(pts);
+		rectangle(img, rc, Scalar(0, 0, 255), 1);
+		putText(img, label, rc.tl(), FONT_HERSHEY_PLAIN, 1, Scalar(0, 0, 255));
+	}
+	imshow("bbox", img);
 }
