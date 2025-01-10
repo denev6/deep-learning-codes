@@ -14,3 +14,10 @@ void contours();
 void contours_hierarchy();
 void bbox_with_label();
 
+//detection
+void template_matching();
+void detect_face_haarcascade();
+void detect_people_hog();
+void detect_QR();
+void corner_harris();
+void corner_FAST();

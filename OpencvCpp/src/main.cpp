@@ -8,7 +8,7 @@ using namespace std;
 using namespace cv;
 
 int main() {
-	bbox_with_label();
+	corner_FAST();
 
 	waitKey();
 	destroyAllWindows();

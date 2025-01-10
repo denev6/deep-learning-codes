@@ -15,6 +15,5 @@ x64/
 
 # Image
 assets/lenna.bmp
-assets/man1.jpg
-assets/man2.jpg
-assets/man3.jpg
+assets/p_*.*
+models/

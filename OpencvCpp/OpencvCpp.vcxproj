@@ -24,6 +24,7 @@
     <ClCompile Include="src\basic\filter.cpp" />
     <ClCompile Include="src\basic\hist.cpp" />
     <ClCompile Include="src\basic\video.cpp" />
+    <ClCompile Include="src\detection.cpp" />
     <ClCompile Include="src\edge.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\transform.cpp" />
