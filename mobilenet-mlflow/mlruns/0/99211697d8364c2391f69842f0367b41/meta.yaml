@@ -1,0 +1,16 @@
+artifact_uri: file:///c:/Users/admin/Desktop/deep-learning-codes/resnet-mlflow/mlruns/0/99211697d8364c2391f69842f0367b41/artifacts
+deleted_time: 1736511751947
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: 99211697d8364c2391f69842f0367b41
+run_name: big-chimp-863
+run_uuid: 99211697d8364c2391f69842f0367b41
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1736508273467
+status: 1
+tags: []
+user_id: admin

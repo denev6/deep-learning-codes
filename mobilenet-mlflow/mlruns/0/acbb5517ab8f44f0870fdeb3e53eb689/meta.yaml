@@ -1,0 +1,16 @@
+artifact_uri: file:///c:/Users/admin/Desktop/deep-learning-codes/resnet-mlflow/mlruns/0/acbb5517ab8f44f0870fdeb3e53eb689/artifacts
+deleted_time: 1736511751933
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: acbb5517ab8f44f0870fdeb3e53eb689
+run_name: able-snipe-992
+run_uuid: acbb5517ab8f44f0870fdeb3e53eb689
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1736511032089
+status: 1
+tags: []
+user_id: admin

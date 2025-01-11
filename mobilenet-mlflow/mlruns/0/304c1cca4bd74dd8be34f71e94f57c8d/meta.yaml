@@ -1,0 +1,16 @@
+artifact_uri: file:///c:/Users/admin/Desktop/deep-learning-codes/resnet-mlflow/mlruns/0/304c1cca4bd74dd8be34f71e94f57c8d/artifacts
+deleted_time: 1736511751948
+end_time: 1736508210086
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: 304c1cca4bd74dd8be34f71e94f57c8d
+run_name: nervous-moth-751
+run_uuid: 304c1cca4bd74dd8be34f71e94f57c8d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1736508127810
+status: 4
+tags: []
+user_id: admin

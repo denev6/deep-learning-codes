@@ -1,0 +1,16 @@
+artifact_uri: file:///c:/Users/admin/Desktop/deep-learning-codes/resnet-mlflow/mlruns/0/b7dad968dd834f3d91880a3198452dec/artifacts
+deleted_time: 1736511751941
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: b7dad968dd834f3d91880a3198452dec
+run_name: fun-turtle-50
+run_uuid: b7dad968dd834f3d91880a3198452dec
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1736509048397
+status: 1
+tags: []
+user_id: admin

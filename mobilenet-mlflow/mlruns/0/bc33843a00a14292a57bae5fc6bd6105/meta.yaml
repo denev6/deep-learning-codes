@@ -1,0 +1,16 @@
+artifact_uri: file:///c:/Users/admin/Desktop/deep-learning-codes/resnet-mlflow/mlruns/0/bc33843a00a14292a57bae5fc6bd6105/artifacts
+deleted_time: 1736511751954
+end_time: 1736505447426
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: bc33843a00a14292a57bae5fc6bd6105
+run_name: unique-loon-183
+run_uuid: bc33843a00a14292a57bae5fc6bd6105
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1736505440708
+status: 4
+tags: []
+user_id: admin

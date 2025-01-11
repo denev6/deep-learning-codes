@@ -1,0 +1,16 @@
+artifact_uri: file:///c:/Users/admin/Desktop/deep-learning-codes/resnet-mlflow/mlruns/0/9cbb87ebe42e400ea0603f609aa81f1e/artifacts
+deleted_time: 1736511751946
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: 9cbb87ebe42e400ea0603f609aa81f1e
+run_name: judicious-zebra-455
+run_uuid: 9cbb87ebe42e400ea0603f609aa81f1e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1736508410571
+status: 1
+tags: []
+user_id: admin
