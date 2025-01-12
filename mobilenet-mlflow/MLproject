@@ -8,10 +8,10 @@ entry_points:
       batch: {type: int, default: 32}
       lr: {type: float, default: 0.01}
       epoch: {type: int, default: 3}
-    command: "python train.py --batch_size {batch} --learning_rate {lr} --epoch {epoch}"
+    command: "python _train.py --batch_size {batch} --learning_rate {lr} --epoch {epoch}"
   predict:
     parameters:
       img: str
       model: {type: str, default: "./models/base.pth"}
-    command: "python predict.py --data_path {img} --model_path {model}"
+    command: "python _predict.py --data_path {img} --model_path {model}"
   

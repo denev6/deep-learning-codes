@@ -1,12 +1,14 @@
 from torch import device, cuda
 from torchvision import transforms
 
-transform = transforms.Compose([
-    transforms.Grayscale(num_output_channels=3),
-    transforms.Resize((224, 224)),
-    transforms.ToTensor(),
-    transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
-])
+transform = transforms.Compose(
+    [
+        transforms.Grayscale(num_output_channels=3),
+        transforms.Resize((224, 224)),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5]),
+    ]
+)
 labels = {
     0: "T-shirt/top",
     1: "Trouser",
