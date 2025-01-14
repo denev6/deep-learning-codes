@@ -2,15 +2,13 @@
 #include <iostream>
 //#include "basic.hpp"
 //#include "transform.hpp"
-#include "detection.hpp"
+//#include "detection.hpp"
+#include "machine-learning.hpp"
 
 using namespace std;
 using namespace cv;
 
 int main() {
-	corner_FAST();
-
-	waitKey();
-	destroyAllWindows();
+	draw_mnist_knn();
 	return 0;
 }

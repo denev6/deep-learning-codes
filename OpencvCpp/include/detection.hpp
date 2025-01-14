@@ -21,3 +21,7 @@ void detect_people_hog();
 void detect_QR();
 void corner_harris();
 void corner_FAST();
+void keypoint_ORB();
+void keypoint_matching();
+void keypoint_homography();
+void stitching();

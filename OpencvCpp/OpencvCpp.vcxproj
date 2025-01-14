@@ -19,23 +19,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\basic\color.cpp" />
-    <ClCompile Include="src\basic\computation.cpp" />
-    <ClCompile Include="src\basic\filter.cpp" />
-    <ClCompile Include="src\basic\hist.cpp" />
-    <ClCompile Include="src\basic\video.cpp" />
-    <ClCompile Include="src\detection.cpp" />
-    <ClCompile Include="src\edge.cpp" />
-    <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\transform.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="include\basic.hpp" />
-    <ClInclude Include="include\detection.hpp" />
-    <ClInclude Include="include\transform.hpp" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include=".gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\geometry\detection.cpp" />
+    <ClCompile Include="src\machine-learning\cnn_mnist.cpp" />
+    <ClCompile Include="src\machine-learning\knn_mnist.cpp" />
+    <ClCompile Include="src\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\machine-learning.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

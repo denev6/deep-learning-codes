@@ -140,19 +140,19 @@ void flip_horizontal() {
 }
 
 void perspective_transform() {
-	Mat img = imread(IMG_PATH + "object.jpg");
+	Mat img = imread(IMG_PATH + "object3.jpg");
 	if (img.empty()) return;
 
 	// when four coordinates are given
 	Point2f objectPoint[4] = {
-		Point2f(53, 69),
-		Point2f(276, 51),
-		Point2f(330, 429),
-		Point2f(79, 455)
+		Point2f(10, 141),
+		Point2f(212, 29),
+		Point2f(486, 273),
+		Point2f(268, 477)
 	};
 
 	int dst_w = cvRound(img.cols / 2);
-	int dst_h = cvRound(img.rows / 2);
+	int dst_h = cvRound(img.rows / 1.5);
 	Point2f dstPoint[4] = {
 		Point2f(0, 0),
 		Point2f(dst_w - 1, 0),
