@@ -9,7 +9,6 @@ using namespace std;
 const string IMG_PATH = "C:\\Users\\admin\\Desktop\\deep-learning-codes\\OpencvCpp\\assets\\";
 
 Ptr<KNearest> train_knn();
-void on_mouse_mnist(int event, int x, int y, int flags, void* userdata);
 
 void draw_mnist_knn() {
 	Ptr<KNearest> knn = train_knn();
@@ -61,22 +60,4 @@ Ptr<KNearest> train_knn() {
 	knn->train(train_images, ROW_SAMPLE, train_labels);
 
 	return knn;
-}
-
-Point ptPrev(-1, -1);
-
-void on_mouse_mnist(int event, int x, int y, int flags, void* userdata) {
-	Mat img = *(Mat*)userdata;
-
-	if (event == EVENT_LBUTTONDOWN) {
-		ptPrev = Point(x, y);
-	}
-	else if (event == EVENT_LBUTTONUP) {
-		ptPrev = Point(-1, -1);
-	}
-	else if (event == EVENT_MOUSEMOVE && (flags & EVENT_FLAG_LBUTTON)) {
-		line(img, ptPrev, Point(x, y), Scalar::all(255), 40, LINE_AA, 0);
-		ptPrev = Point(x, y);
-		imshow("palette", img);
-	}
 }

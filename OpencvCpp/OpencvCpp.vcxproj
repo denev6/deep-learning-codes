@@ -25,6 +25,7 @@
     <ClCompile Include="src\geometry\detection.cpp" />
     <ClCompile Include="src\machine-learning\cnn_mnist.cpp" />
     <ClCompile Include="src\machine-learning\knn_mnist.cpp" />
+    <ClCompile Include="src\machine-learning\palette.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>

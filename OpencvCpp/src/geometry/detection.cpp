@@ -14,24 +14,24 @@ void template_matching() {
 	if (img.empty() || template_img.empty()) return;
 
 	// add noise
-img = img + Scalar(50, 50, 50);
-Mat noise(img.size(), CV_32SC3);
-randn(noise, 0, 10);
-add(img, noise, img, Mat(), CV_8UC3);
+	img = img + Scalar(50, 50, 50);
+	Mat noise(img.size(), CV_32SC3);
+	randn(noise, 0, 10);
+	add(img, noise, img, Mat(), CV_8UC3);
 
-Mat dst, dst_normalized;
-matchTemplate(img, template_img, dst, TM_CCOEFF_NORMED);
-normalize(dst, dst_normalized, 0, 255, NORM_MINMAX, CV_8U);
+	Mat dst, dst_normalized;
+	matchTemplate(img, template_img, dst, TM_CCOEFF_NORMED);
+	normalize(dst, dst_normalized, 0, 255, NORM_MINMAX, CV_8U);
 
-double max_value;
-Point max_loc;
-minMaxLoc(dst, 0, &max_value, 0, &max_loc);
+	double max_value;
+	Point max_loc;
+	minMaxLoc(dst, 0, &max_value, 0, &max_loc);
 
-rectangle(img, Rect(max_loc.x, max_loc.y, template_img.cols, template_img.rows), Scalar(0, 0, 255), 2);
+	rectangle(img, Rect(max_loc.x, max_loc.y, template_img.cols, template_img.rows), Scalar(0, 0, 255), 2);
 
-imshow("image with noises", img);
-imshow("template", template_img);
-imshow("correlation", dst_normalized);
+	imshow("image with noises", img);
+	imshow("template", template_img);
+	imshow("correlation", dst_normalized);
 }
 
 void detect_face_haarcascade() {

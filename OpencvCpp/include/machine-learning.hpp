@@ -1,6 +1,6 @@
 #pragma once
 
-void draw_mnist_knn();
+void on_mouse_mnist(int event, int x, int y, int flags, void* userdata);
 
-// opencv not fully support tenserflow 2.x
-// "draw_mnist_cnn" not working.
+void draw_mnist_knn();
+void draw_mnist_cnn();

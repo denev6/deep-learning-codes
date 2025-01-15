@@ -9,6 +9,6 @@ using namespace std;
 using namespace cv;
 
 int main() {
-	draw_mnist_knn();
+	draw_mnist_cnn();
 	return 0;
 }
