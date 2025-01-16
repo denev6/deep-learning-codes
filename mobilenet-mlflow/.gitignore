@@ -1,5 +1,0 @@
-/data/FashionMNIST
-/models
-__pycache__
-condaenv.*
-/test.py

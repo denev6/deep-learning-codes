@@ -1,0 +1,15 @@
+artifact_uri: ./mlruns/0/d6cdb267db09412aa4a6b5c99968ac43/artifacts
+end_time: 1736941118697
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d6cdb267db09412aa4a6b5c99968ac43
+run_name: bouncy-mule-718
+run_uuid: d6cdb267db09412aa4a6b5c99968ac43
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1736941110461
+status: 3
+tags: []
+user_id: admin
