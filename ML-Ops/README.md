@@ -5,8 +5,9 @@
 - Train model using Torch-Vision: [base.ipynb](/ML-Ops/base.ipynb)
   - FashionMNIST
   - MobileNet_v2
-- Trace model on MLFlow
-- Serve model on Flask: [app.py](/ML-Ops/app.py)
+- Trace model on MLFlow: [model](/ML-Ops/model)
+- Serve model on Flask: [app.py](/ML-Ops/app/app.py)
+- Docker settings: [Dockerfile](/ML-Ops/app/Dockerfile)
 
 ![mlflow-preview](/ML-Ops/preview/summary.png)
 
@@ -30,14 +31,26 @@ mlflow run . -e main --experiment-name=MobileNetV2 -P epoch=3 -P lr=0.005
 mlflow run . -e predict -P img="./static/img/996.jpg"
 ```
 
-### Serve
-
-```bash
-mlflow models serve -m "runs:/ffb263113ee64d05928679ef5bcda173/MobileNet_model" --port 8000
-```
-
 ## Flask
 
 ```bash
+cd app
 python app.py
+```
+
+## Docker
+
+```bash
+cd app
+docker build -t flask-app:0.1 .
+docker image ls -a
+docker run -p 8080:5000 --name test flask-app:0.1
+```
+
+127.0.0.1:8080
+
+### remove
+
+```bash
+docker rm test
 ```

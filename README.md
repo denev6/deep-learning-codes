@@ -28,12 +28,13 @@ README: [OpencvCpp](/OpencvCpp)
 
 ## ML 모델 서빙
 
-`Python` `MLFlow` `Torch-vision` `Flask` `MobileNet` `FashionMNIST`
+`Python` `MLFlow` `Torch-vision` `Flask` `Docker` `MobileNet` `FashionMNIST`
 
 README: [ML-Ops](/ML-Ops)
 
 - MLFlow: [MLproject](/ML-Ops/MLproject)
 - Model: [base.ipynb](/ML-Ops/base.ipynb)
-- Flask: [app.py](/ML-Ops/app.py)
+- Flask: [app](/ML-Ops/app)
+- Docker: [Dockerfile](/ML-Ops/app/Dockerfile)
 
 ![mlflow-preview](/ML-Ops/preview/summary.png)
