@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>결과</title>
+    <title>{{ status_code }}</title>
   </head>
   <body>
-    <img src="{{ img_src }}" alt="업로드한 이미지" />
-    <p>예측: "{{ label }}" ({{ prob }})</p>
+    <h1>Status: {{ status_code }}</h1>
+    <p>{{ detail }}</p>
     <a href="/">다른 파일 올리기</a>
   </body>
 </html>

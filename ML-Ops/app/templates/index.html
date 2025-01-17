@@ -8,7 +8,8 @@
   <body>
     <h1>의류 이미지 분류</h1>
     <form action="/result" method="POST" enctype="multipart/form-data">
-      <input type="file" name="file" />
+      <label for="file">이미지 선택:</label>
+      <input type="file" name="file" id="file" required><br>
       <input type="submit" value="제출" />
     </form>
   </body>

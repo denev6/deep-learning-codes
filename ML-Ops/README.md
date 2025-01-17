@@ -6,14 +6,14 @@
   - FashionMNIST
   - MobileNet_v2
 - Trace model on MLFlow: [model](/ML-Ops/model)
-- Serve model on Flask: [app.py](/ML-Ops/app/app.py)
+- Serve model using FastAPI: [main.py](/ML-Ops/app/main.py)
 - Docker settings: [Dockerfile](/ML-Ops/app/Dockerfile)
 
 ![mlflow-preview](/ML-Ops/preview/summary.png)
 
-## MLFlow
+## 🌊 MLFlow
 
-### open MLFlow-ui
+### Open MLFlow-ui
 
 ```bash
 mlflow ui
@@ -28,17 +28,23 @@ mlflow run . -e main --experiment-name=MobileNetV2 -P epoch=3 -P lr=0.005
 ### Predict
 
 ```bash
-mlflow run . -e predict -P img="./static/img/996.jpg"
+mlflow run . -e predict -P img="./static/996.jpg"
 ```
 
-## Flask
+## 📗 FastAPI
 
 ```bash
 cd app
-python app.py
+uvicorn main:app --reload
 ```
 
-## Docker
+### Test API
+
+```bash
+python test.py
+```
+
+## 🐋 Docker
 
 ```bash
 cd app
@@ -49,8 +55,9 @@ docker run -p 8080:5000 --name test flask-app:0.1
 
 127.0.0.1:8080
 
-### remove
+### Remove
 
 ```bash
 docker rm test
+docker rmi app:0.1
 ```
