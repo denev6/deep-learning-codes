@@ -2,13 +2,13 @@
 
 - [RoBERTa Fine-tuning](#roberta-fine-tuning)
 - [OpenCV 이미지 처리](#opencv-이미지-처리)
-- [ML 모델 서빙](#ml-모델-서빙)
+- [ML 모델 서빙](#ml-모델-관리-및-배포)
 
 ## RoBERTa Fine-tuning
 
 `Python` `Hugging-Face` `Torch` `BERT` `Data-processing`
 
-README: [mobilenet mlflow](/roberta)
+README: [Roberta](/roberta)
 
 - Model: [Github](/roberta/RoBERTa_pytorch.ipynb) | [DACON](https://dacon.io/competitions/official/236027/codeshare/7275)
 
@@ -30,13 +30,13 @@ README: [OpencvCpp](/OpencvCpp)
 
 ## ML 모델 관리 및 배포
 
-`Python` `MLFlow` `Torch-vision` `FastAPI` `Docker` `MobileNet` `FashionMNIST`
+`Python` `Torch-vision` `FastAPI` `Docker` `MLFlow` `MobileNet` `FashionMNIST`
 
-README: [ML-Ops](/ML-Ops)
+README: [ML-Ops](/ML-Ops) | [Blog](https://denev6.github.io/computer-vision/2025/01/17/ml-api.html)
 
 - MLFlow: [MLproject](/ML-Ops/_model/MLproject)
 - Model: [final.ipynb](/ML-Ops/final.ipynb)
 - FastAPI: [app](/ML-Ops/app)
 - Docker: [Dockerfile](/ML-Ops/app/Dockerfile)
 
-![mlflow preview](/ML-Ops/preview/prediction.png)
+![mlflow preview](https://denev6.github.io/assets/posts/ml-api/prediction-img.png)
