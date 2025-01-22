@@ -1,0 +1,16 @@
+name: mobilenet
+
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    parameters: 
+      batch: {type: int, default: 32}
+      lr: {type: float, default: 0.01}
+      epoch: {type: int, default: 3}
+    command: "python _model/train.py --batch_size {batch} --learning_rate {lr} --epoch {epoch}"
+  predict:
+    parameters:
+      img: str
+    command: "python _model/predict.py --data_path {img}"
+  

@@ -1,0 +1,14 @@
+name: MobileNetV2
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - numpy==1.26.4
+  - matplotlib==3.10.0
+  - pillow==11.0.0
+  - pip
+  - pip:
+      - mlflow==2.18.0
+      - torch==2.5.1
+      - torchvision==0.20.1
+      - torchsummary==1.5.1

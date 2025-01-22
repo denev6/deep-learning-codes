@@ -8,11 +8,11 @@
 
 `Python` `Hugging-Face` `Torch` `BERT` `Data-processing`
 
-README: [mobilenet-mlflow](/roberta)
+README: [mobilenet mlflow](/roberta)
 
 - Model: [Github](/roberta/RoBERTa_pytorch.ipynb) | [DACON](https://dacon.io/competitions/official/236027/codeshare/7275)
 
-![Ranked in 2/259](https://denev6.github.io/assets/posts/dacon-2022/award.png)
+<img src="https://denev6.github.io/assets/posts/dacon-2022/award.png" alt="Ranked in 2/259" style="max-width:300px">
 
 ## OpenCV 이미지 처리
 
@@ -26,15 +26,17 @@ README: [OpencvCpp](/OpencvCpp)
 - Object detection: [C++](/OpencvCpp/src/geometry/detection.cpp)
 - Deep learning: [Run](/OpencvCpp/src/machine-learning/cnn_mnist.cpp) | [Train](/OpencvCpp/src/machine-learning/cnn_onnx.ipynb)
 
-## ML 모델 서빙
+![edge detection](https://denev6.github.io/assets/posts/edge-detection/canny-result.png)
 
-`Python` `MLFlow` `Torch-vision` `Flask` `Docker` `MobileNet` `FashionMNIST`
+## ML 모델 관리 및 배포
+
+`Python` `MLFlow` `Torch-vision` `FastAPI` `Docker` `MobileNet` `FashionMNIST`
 
 README: [ML-Ops](/ML-Ops)
 
-- MLFlow: [MLproject](/ML-Ops/MLproject)
-- Model: [base.ipynb](/ML-Ops/base.ipynb)
-- Flask: [app](/ML-Ops/app)
+- MLFlow: [MLproject](/ML-Ops/_model/MLproject)
+- Model: [final.ipynb](/ML-Ops/final.ipynb)
+- FastAPI: [app](/ML-Ops/app)
 - Docker: [Dockerfile](/ML-Ops/app/Dockerfile)
 
-![mlflow-preview](/ML-Ops/preview/summary.png)
+![mlflow preview](/ML-Ops/preview/prediction.png)
