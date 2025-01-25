@@ -9,7 +9,7 @@
 - Serve model using FastAPI: [main.py](/ML-Ops/app/main.py)
 - Docker settings: [Dockerfile](/ML-Ops/app/Dockerfile)
 
-![mlflow-preview](/ML-Ops/preview/summary.png)
+![API preview](https://denev6.github.io/assets/posts/ml-api/prediction-img.png)
 
 ## 🌊 MLFlow
 
@@ -51,7 +51,7 @@ python test.py
 cd app
 docker build -t app:0.1 .
 docker image ls -a
-docker run -p 8080:5000 --name test app:0.1
+docker run -p 8080:8000 --name test app:0.1
 ```
 
 URL: 127.0.0.1:8080

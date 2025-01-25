@@ -39,4 +39,4 @@ README: [ML-Ops](/ML-Ops) | [Blog](https://denev6.github.io/computer-vision/2025
 - FastAPI: [app](/ML-Ops/app)
 - Docker: [Dockerfile](/ML-Ops/app/Dockerfile)
 
-![mlflow preview](https://denev6.github.io/assets/posts/ml-api/prediction-img.png)
+![API preview](https://denev6.github.io/assets/posts/ml-api/prediction-img.png)
