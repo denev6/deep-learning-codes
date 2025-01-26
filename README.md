@@ -8,7 +8,7 @@
 
 `Python` `Hugging-Face` `Torch` `BERT` `Data-processing`
 
-README: [Roberta](/roberta)
+README: [Roberta](/roberta) | [Blog](https://denev6.github.io/projects/2022/12/17/dacon.html)
 
 - Model: [Github](/roberta/RoBERTa_pytorch.ipynb) | [DACON](https://dacon.io/competitions/official/236027/codeshare/7275)
 

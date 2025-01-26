@@ -61,18 +61,18 @@ void detect_face_haarcascade() {
 }
 
 void detect_people_hog() {
-	Mat img = imread(IMG_PATH + "p_people.jpg");
+	Mat img = imread(IMG_PATH + "human.jpg");
 	if (img.empty()) return;
 
 	HOGDescriptor hog;
 	hog.setSVMDetector(HOGDescriptor::getDefaultPeopleDetector());
 
 	vector<Rect> detected;
-	hog.detectMultiScale(img, detected);
+	hog.detectMultiScale(img, detected, 0, Size(8, 8), Size(16, 16));
 
 	for (Rect rect : detected) {
-		Scalar color = Scalar(rand() % 256, rand() % 256, rand() % 256);
-		rectangle(img, rect, color, 2);
+		Scalar color = Scalar(0, 0, 255);
+		rectangle(img, rect, color, 3);
 	}
 	imshow("people", img);
 }

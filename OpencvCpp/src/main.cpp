@@ -2,13 +2,14 @@
 #include <iostream>
 //#include "basic.hpp"
 //#include "transform.hpp"
-//#include "detection.hpp"
-#include "machine-learning.hpp"
+#include "detection.hpp"
+//#include "machine-learning.hpp"
 
 using namespace std;
 using namespace cv;
 
 int main() {
-	draw_mnist_cnn();
+	detect_people_hog();
+	waitKey();
 	return 0;
 }

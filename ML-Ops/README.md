@@ -1,7 +1,7 @@
 # ML API
 
-- Dependencies: [conda.yaml](/ML-Ops/conda.yaml)
-- Config: [MLproject](/ML-Ops/MLproject)
+- Dependencies: [conda.yaml](/ML-Ops/_model/conda.yaml)
+- Config: [MLproject](/ML-Ops/_model/MLproject)
 - Train model using Torch-Vision: [final.ipynb](/ML-Ops/final.ipynb)
   - FashionMNIST
   - MobileNet_v2
