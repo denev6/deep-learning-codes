@@ -68,7 +68,7 @@ void detect_people_hog() {
 	hog.setSVMDetector(HOGDescriptor::getDefaultPeopleDetector());
 
 	vector<Rect> detected;
-	hog.detectMultiScale(img, detected, 0, Size(8, 8), Size(16, 16));
+	hog.detectMultiScale(img, detected, 0, Size(8, 8), Size(8, 8));
 
 	for (Rect rect : detected) {
 		Scalar color = Scalar(0, 0, 255);

@@ -24,17 +24,16 @@ def gradients(image):
     return magnitude, orientation
 
 
-def gaussian_filter(magnitude, cell_size, block_size, sigma):
+def gaussian_filter(magnitude, cell_size, sigma):
     h, w = magnitude.shape
-    block_stride = cell_size * block_size  # block 단위로 계산
     filtered_magnitude = np.zeros_like(magnitude)
 
-    for i in range(0, h - block_stride + 1, cell_size):
-        for j in range(0, w - block_stride + 1, cell_size):
+    for i in range(0, h - cell_size + 1, cell_size):
+        for j in range(0, w - cell_size + 1, cell_size):
             # 가우시안 필터 적용
-            block = magnitude[i : i + block_stride, j : j + block_stride]
+            block = magnitude[i : i + cell_size, j : j + cell_size]
             gaussian_block = cv2.GaussianBlur(block, (0, 0), sigma)
-            filtered_magnitude[i : i + block_stride, j : j + block_stride] = (
+            filtered_magnitude[i : i + cell_size, j : j + cell_size] = (
                 gaussian_block
             )
 
@@ -71,17 +70,22 @@ def vote_histogram(magnitude, orientation, cell_size, n_bins, degree):
 
 
 def normalize(hist, block_size, stride):
-    rows, cols, _ = hist.shape
-    norm_hist = np.zeros_like(hist)
+    rows, cols, bins = hist.shape
+    block_rows = (rows - block_size) // stride + 1
+    block_cols = (cols - block_size) // stride + 1
+    
+    normalized_hist = np.zeros((block_rows, block_cols, block_size * block_size * bins))
+    
+    for i in range(0, rows - block_size + 1, stride):
+        for j in range(0, cols - block_size + 1, stride):
+            block_row = i // stride
+            block_col = j // stride
+            
+            block = hist[i:i + block_size, j:j + block_size, :].ravel()
+            norm = np.sqrt(np.sum(block**2) + 1e-6)
+            normalized_hist[block_row, block_col, :] = block / norm
 
-    for row in range(0, rows - block_size + 1, stride):
-        for col in range(0, cols - block_size + 1, stride):
-            block_magnitude = hist[row : row + block_size, col : col + block_size, :]
-            norm = np.sqrt(np.sum(block_magnitude.ravel() ** 2) + 1e-6)
-            norm_block = block_magnitude / norm
-            norm_hist[row : row + block_size, col : col + block_size, :] = norm_block
-
-    return norm_hist
+    return normalized_hist
 
 
 def visualize(image):
@@ -108,11 +112,13 @@ magnitude, orientation = gradients(image)
 visualize(magnitude)
 
 # 가우시안 필터 적용
-filtered_magnitude = gaussian_filter(magnitude, CELL_SIZE, BLOCK_SIZE, STD)
-visualize(filtered_magnitude)
+magnitude = gaussian_filter(magnitude, CELL_SIZE, STD)
+visualize(magnitude)
 
 # Histogram 생성
-hist = vote_histogram(filtered_magnitude, orientation, CELL_SIZE, N_BINS, UNSIGNED)
+hist = vote_histogram(magnitude, orientation, CELL_SIZE, N_BINS, UNSIGNED)
+print(hist.shape)
 
 # Block 정규화
 norm_hist = normalize(hist, BLOCK_SIZE, BLOCK_STRIDE)
+print(norm_hist.shape)
