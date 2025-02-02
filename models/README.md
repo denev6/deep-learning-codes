@@ -4,7 +4,7 @@
 - VAE: [BLOG](https://denev6.github.io/computer-vision/2025/01/29/vae.html)
   - Auto Encoder
 - HOG Descriptor: [BLOG](https://denev6.github.io/paper-review/2025/01/27/hog.html)
-- AlexNet
+- AlexNet: [BLOG](https://denev6.github.io/paper-review/2025/01/31/alexnet.html)
 
 ## 참고 문헌
 
