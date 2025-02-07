@@ -44,6 +44,8 @@ README: [ML-Ops](/ML-Ops) | [Blog](https://denev6.github.io/computer-vision/2025
 
 ## 딥러닝 모델 분석
 
+`Pytorch` `ResNet` `Transformer` `VAE`
+
 README: [models](/models/)
 
 딥러닝 모델이 소개된 논문을 기반으로 구현 및 분석 진행
