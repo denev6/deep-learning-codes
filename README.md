@@ -2,7 +2,6 @@
 
 - [RoBERTa Fine-tuning](#roberta-fine-tuning)
 - [OpenCV 이미지 처리](#opencv-이미지-처리)
-- [ML 모델 서빙](#ml-모델-관리-및-배포)
 - [딥러닝 모델 분석](#딥러닝-모델-분석)
 
 ## RoBERTa Fine-tuning
@@ -29,23 +28,10 @@ README: [OpencvCpp](/OpencvCpp)
 
 ![edge detection](https://denev6.github.io/assets/posts/edge-detection/canny-result.png)
 
-## ML 모델 관리 및 배포
-
-`Python` `Torch-vision` `FastAPI` `Docker` `MLFlow` `MobileNet` `FashionMNIST`
-
-README: [ML-Ops](/ML-Ops) | [Blog](https://denev6.github.io/computer-vision/2025/01/17/ml-api.html)
-
-- MLFlow: [MLproject](/ML-Ops/_model/MLproject)
-- Model: [final.ipynb](/ML-Ops/final.ipynb)
-- FastAPI: [app](/ML-Ops/app)
-- Docker: [Dockerfile](/ML-Ops/app/Dockerfile)
-
-![API preview](https://denev6.github.io/assets/posts/ml-api/prediction-img.png)
-
 ## 딥러닝 모델 분석
 
 `Pytorch` `ResNet` `Transformer` `VAE` `FCN`
 
-README: [models](/models/)
+README: [models](/models)
 
 딥러닝 모델이 소개된 논문을 기반으로 구현 및 분석 진행
