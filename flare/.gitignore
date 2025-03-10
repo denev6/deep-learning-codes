@@ -1,0 +1,13 @@
+# PyPI
+/build
+/dist
+/*.egg-info
+
+# Setup
+.vscode
+.idea
+desktop.ini
+
+# Local
+p_*
+__pycache__
