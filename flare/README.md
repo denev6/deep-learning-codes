@@ -28,7 +28,7 @@ I'm working on it...
   - Clear cache
   - Ignore warnings
 
-Alternative: Pytorch-lightening + MLFlow
+Alternative: Pytorch-lightning + MLFlow
 
 ## Google Colab
 

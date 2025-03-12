@@ -4,10 +4,11 @@
 /*.egg-info
 
 # Setup
+.vs
 .vscode
 .idea
-desktop.ini
 
 # Local
 p_*
 __pycache__
+desktop.ini
