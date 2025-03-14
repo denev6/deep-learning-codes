@@ -10,6 +10,7 @@ import numpy as np
 
 from .config import Config
 
+
 def _time_stamp():
     current_time = datetime.now()
     return current_time.strftime("%y%m%d%H%M%S%f")
@@ -18,6 +19,7 @@ def _time_stamp():
 def _format_name(name: str, max_len: int = 30) -> str:
     name = name.strip().lower().replace(" ", "-")
     return name[:max_len]
+
 
 def _obj_to_dict(obj):
     # Do not use 'asdict' since 'flare.config.Config' allows extra values
@@ -30,11 +32,13 @@ def _obj_to_dict(obj):
         assert isinstance(obj, dict), "Object must be a dictionary or dataclass."
         return obj
 
+
 def _safe_update_dict(d, k, v):
     if k in d:
         raise KeyError(f"Duplicate key: {k}")
     if v is not None:
         d[k] = v
+
 
 def clear_cache():
     gc.collect()
@@ -48,6 +52,7 @@ def device(force_cuda=True) -> torch.device:
         return torch.device("cuda")
     return torch.device("cuda") if has_cuda else torch.device("cpu")
 
+
 def ignore_warnings():
     warnings.filterwarnings("ignore")
 
@@ -58,18 +63,12 @@ def fix_random_seed(seed=42):
     torch.cuda.manual_seed_all(seed)
 
 
-def log_as_json(file_path: str, *args, **kwargs):
+def log_as_json(file_path, *args, **kwargs):
     """Save logs to a JSON file. Dictionary or dataclass is accepted.
 
     Example:
-    >>> log_as_json({"tag": "flare"}, config=Config(name="CNN", batch=4, ...))
-    {
-        "tag": "flare",
-        "config": {
-            "name": "CNN",
-            "batch": 4,
-        }
-    }
+    >>> log_as_json("log.json", {"tag": "flare"}, config=Config(name="CNN", batch=4, ...))
+    {"tag": "flare","config": {"name": "CNN","batch": 4,}}
     """
     _, ext = os.path.splitext(file_path)
     assert ext == ".json", "File path must be a JSON file."

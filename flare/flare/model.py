@@ -1,22 +1,11 @@
-import torch
-import torch.nn as nn
-import torch.nn.functional as F
+from torchinfo import summary
 
-class FlareModule(nn.Module):
-    def __init__(self, *args, **kwargs):
-        super().__init__()
 
-    def forward(self, x):
-        return x
+def print_model(model, input_size=None, *args, **kwargs):
+    """Print model summary.
 
-    def optimizer(self):
-        optimizer = torch.optim.Adam(self.parameters(), lr=1e-3)
-        return optimizer
-
-    def loss_func(self):
-        """Define loss function that gets 'output' and 'target' as input."""
-        loss_fn = nn.CrossEntropyLoss()
-        return loss_fn
-
-    def scheduler(self):
-        return None
+    Args:
+        model: model to summarize.
+        input_size: input size for model include batch.
+    """
+    summary(model, input_size, *args, **kwargs)

@@ -8,13 +8,14 @@ from .utils import _time_stamp, _format_name
 class Config:
     """Configuration for training and Log with 'flare.log'.
 
-    :param name: name of the experiment
-    :param batch: batch size
-    :param epochs: number of epochs
-    :param lr: learning rate
-    :param enable_fp16: whether to use FP16 precision
-    :param grad_step: number of gradient accumulation steps
-    :param patience: patience for early stopping
+    Args:
+        name: name of the experiment
+        batch: batch size
+        epochs: number of epochs
+        lr: learning rate
+        enable_fp16: whether to use FP16 precision
+        grad_step: number of gradient accumulation steps
+        patience: patience for early stopping
 
     Example:
     >>> config = Config(name="CNN", batch=4, epochs=5, lr=0.01)
@@ -50,7 +51,8 @@ class Config:
     def add(self, **kwargs):
         """Add extra attributes
 
-        :raises KeyError: if the key already exists in the config.
+        Exceptions:
+            - KeyError: if the key already exists in the config.
         """
         for k, v in kwargs.items():
             if k in self.__dict__.keys():

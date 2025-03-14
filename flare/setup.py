@@ -18,9 +18,11 @@ setup(
     url="https://github.com/denev6/deep-learning-codes/tree/main/flare",
     install_requires=[
         "torch",
-        "tqdm",
         "numpy",
+        "matplotlib",
         "scikit-learn",
+        "tqdm",
+        "torchinfo",
     ],
     python_requires=">=3.8",
     classifiers=[
