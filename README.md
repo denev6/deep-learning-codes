@@ -35,3 +35,5 @@ README: [OpencvCpp](/OpencvCpp)
 README: [models](/models)
 
 딥러닝 모델이 소개된 논문을 기반으로 구현 및 분석 진행
+
+![attention image](https://denev6.github.io/assets/posts/vit/attention.png)
