@@ -8,7 +8,7 @@
 
 `Python` `Hugging-Face` `Torch` `BERT` `Data-processing`
 
-README: [Roberta](/roberta) | [Blog](https://denev6.github.io/projects/2022/12/17/dacon.html)
+README: [Roberta](/roberta) | [Blog](https://denev6.github.io/projects/2022/12/17/dacon-roberta.html)
 
 - Model: [Github](/roberta/RoBERTa_pytorch.ipynb) | [DACON](https://dacon.io/competitions/official/236027/codeshare/7275)
 
@@ -21,8 +21,8 @@ README: [Roberta](/roberta) | [Blog](https://denev6.github.io/projects/2022/12/1
 README: [OpencvCpp](/OpencvCpp)
 
 - 참고 도서: [OpenCV 4로 배우는 컴퓨터 비전과 머신 러닝](https://sunkyoo.github.io/opencv4cvml/)
-- Transformation: [C++](/OpencvCpp/src/geometry/transform.cpp) | [BLOG](https://denev6.github.io/computer-vision/2025/01/03/transformation.html)
-- Edge detection: [C++](/OpencvCpp/src/geometry/edge.cpp) | [BLOG](https://denev6.github.io/computer-vision/2025/01/06/edge-detection.html)
+- Transformation: [C++](/OpencvCpp/src/geometry/transform.cpp) | [BLOG](https://denev6.github.io/study/2025/01/03/transformation.html)
+- Edge detection: [C++](/OpencvCpp/src/geometry/edge.cpp) | [BLOG](https://denev6.github.io/study/2025/01/06/edge-detection.html)
 - Object detection: [C++](/OpencvCpp/src/geometry/detection.cpp)
 - Deep learning: [Run](/OpencvCpp/src/machine-learning/cnn_mnist.cpp) | [Train](/OpencvCpp/src/machine-learning/cnn_onnx.ipynb)
 
